@@ -1,0 +1,8 @@
+bundle/*
+!bundle/.gitkeep
+*.pyc
+*.bak
+*.bk
+configs
+myconfig.sh
+*~

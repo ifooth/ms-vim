@@ -37,10 +37,29 @@ endfunction
 "========================
 "Initial Plugin
 "========================
+" 修改leader键
+let mapleader = ','
+let g:mapleader = ','
 syntax on
 
 set encoding=utf-8
 set fileencoding=utf-8
+
+if filereadable(expand("~/vimfiles/vimrc.bundles"))
+    source ~/vimfiles/vimrc.bundles
+endif
+
+
+"create undo file
+if has('persistent_undo')
+  set undolevels=1000         " How many undos
+  set undoreload=10000        " number of lines to save for undo
+  set undofile                " So is persistent undo ...
+  set undodir=$APPDATA\vim\undo\
+endif
+set backupdir=$APPDATA\vim\backup\
+set directory=$APPDATA\vim\swap\
+
 
 set guifont=DejaVu\ Sans\ Mono:h10:cDEFAULT
 colorscheme monokai

@@ -1,0 +1,17 @@
+" Plugin config
+
+set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+call vundle#begin('$HOME/vimfiles/bundle/')
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+
+call vundle#end()            " required
+"
+" NERDTree Conf
+map <leader>n :NERDTreeToggle D:\WorkStation\Tencent-TP\PaaS<CR>
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '^templates_module$']
+
+
+let g:NERDTreeDirArrowExpandable="▸"
+let g:NERDTreeDirArrowCollapsible="▾"
