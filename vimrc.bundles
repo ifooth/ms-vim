@@ -4,6 +4,9 @@ set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
 call vundle#begin('$HOME/vimfiles/bundle/')
 
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/bling/vim-airline.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
@@ -32,3 +35,7 @@ let g:airline_symbols.branch = '⎇'
 nmap <F9> :TagbarToggle<CR>
 let g:tagbar_iconchars = ['▶', '▼']
 let g:tagbar_autofocus = 1
+
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
