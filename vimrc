@@ -61,6 +61,11 @@ set backupdir=$APPDATA\vim\backup\
 set directory=$APPDATA\vim\swap\
 
 
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
 set guifont=DejaVu\ Sans\ Mono:h10:cDEFAULT
 colorscheme monokai
 
