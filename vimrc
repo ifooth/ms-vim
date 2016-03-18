@@ -33,3 +33,24 @@ function MyDiff()
   endif
 endfunction
 
+
+"========================
+"Initial Plugin
+"========================
+syntax on
+
+set encoding=utf-8
+set fileencoding=utf-8
+
+set guifont=DejaVu\ Sans\ Mono:h10:cDEFAULT
+colorscheme monokai
+
+set t_Co=256
+set lines=45 columns=150
+set number
+set nowrap
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smartindent
+
