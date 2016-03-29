@@ -3,42 +3,11 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      if empty(&shellxquote)
-        let l:shxq_sav = ''
-        set shellxquote&
-      endif
-      let cmd = '"' . $VIMRUNTIME . '\diff"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-  if exists('l:shxq_sav')
-    let &shellxquote=l:shxq_sav
-  endif
-endfunction
-
 
 "========================
 "Initial Plugin
 "========================
-" 修改leader键
-let mapleader = ','
+" 修改leader键 let mapleader = ','
 let g:mapleader = ','
 syntax on
 
@@ -60,6 +29,8 @@ endif
 set backupdir=$APPDATA\vim\backup\
 set directory=$APPDATA\vim\swap\
 
+" 关闭交换文件
+set noswapfile
 
 filetype on
 filetype indent on
@@ -67,9 +38,11 @@ filetype plugin on
 filetype plugin indent on
 
 set guifont=DejaVu\ Sans\ Mono:h10:cDEFAULT
-colorscheme monokai
 
 set t_Co=256
+set background=dark
+colorscheme solarized
+" 开始窗口大小
 set lines=45 columns=150
 set number
 set nowrap
@@ -91,3 +64,24 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+
+set completeopt=menu,menuone
+"hi Pmenu                    guibg=#606060
+"hi PmenuSel                 guifg=#dddd00 guibg=#1f82cd
+"hi PmenuSbar                guibg=#d6d6d6
+"hi PmenuThumb               guifg=#3cac3c
+set pumheight=20
+
+
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+
+nnoremap <leader>l :buffers<CR>:buffer<Space>
+
+" 自定义文件语法
+au BufReadPost *.part set syntax=html
+
+set scrolloff=7
+set laststatus=2
+
+set cursorline
