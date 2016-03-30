@@ -28,9 +28,9 @@ call vundle#end()            " required
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'horizontal-split'
-" nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+"nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 let g:syntastic_python_checkers=['flake8'] " 使用pyflakes,速度比pylint快
 let g:syntastic_error_symbol='>>'
@@ -80,7 +80,8 @@ map <leader>f :CtrlPMRU<CR>
 "
 nnoremap <F3> :GundoToggle<CR>
 
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_char = '┆'
 
 let g:UltiSnipsExpandTrigger="<leader>e"
+let g:UltiSnipsSnippetsDir = '~\vimfiles\UltiSnips'
