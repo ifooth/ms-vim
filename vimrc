@@ -46,7 +46,9 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 " 开始窗口大小
-set lines=45 columns=150
+"set lines=45 columns=150
+" 开始窗口最大化
+au GUIEnter * simalt ~x
 set number
 set nowrap
 set expandtab
@@ -78,6 +80,8 @@ set pumheight=20
 
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+"set guioptions+=T  "remove toolbar
+"set guioptions+=m  "remove menu
 
 " list buffers
 nnoremap <leader>l :buffers<CR>:buffer<Space>
@@ -90,5 +94,10 @@ set laststatus=2
 
 set cursorline
 
+" 修改自动加载
 autocmd! bufwritepost vimrc source %
 autocmd! bufwritepost vimrc.bundles source ~\vimfiles\vimrc
+
+" 修改分配字符和背景
+set fillchars+=vert:\|
+hi vertsplit guifg=fg guibg=bg

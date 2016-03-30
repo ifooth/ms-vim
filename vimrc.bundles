@@ -72,11 +72,12 @@ let g:airline_symbols.branch = '⎇'
 nmap <F2> :TagbarToggle<CR>
 let g:tagbar_iconchars = ['▶', '▼']
 let g:tagbar_autofocus = 1
+let g:ctrlp_working_path_mode = 'c'
 
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
-"let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+"let g:ctrlp_user_command = 'ag -g %s -l --nocolor'
 "
 nnoremap <F3> :GundoToggle<CR>
 
