@@ -80,8 +80,8 @@ set pumheight=20
 
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-"set guioptions+=T  "remove toolbar
-"set guioptions+=m  "remove menu
+"set guioptions-=T  "remove toolbar
+"set guioptions-=m  "remove menu
 
 " list buffers
 nnoremap <leader>l :buffers<CR>:buffer<Space>
@@ -97,6 +97,7 @@ set cursorline
 " 修改自动加载
 autocmd! bufwritepost vimrc source %
 autocmd! bufwritepost vimrc.bundles source ~\vimfiles\vimrc
+map <F9> :source ~\vimfiles\vimrc<CR>
 
 " 修改分配字符和背景
 set fillchars+=vert:\|
