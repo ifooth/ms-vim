@@ -1,11 +1,19 @@
 snippet author "author" b 
 # -*- coding: utf-8 -*-
+# Copyright 2016 IFOOTH.COM
+# Author: Joe Lei <thezero12@hotmail.com>
+endsnippet
+
+snippet author-t "author tencent" b
+# -*- coding: utf-8 -*-
 # Copyright 2016 Tencent
 # Author: Joe Lei <joelei@tencent.com>
 endsnippet
 
-snippet author-t "author tencent" b
-# coding=utf-8
-# Copyright 2016 Tencent
-# Author: Joe Lei <joelei@tencent.com>
+snippet strp "strptime(date_string, format)" i
+strptime(${0:date_string}, '%Y-%m-%d %H:%M:%S')
+endsnippet
+
+snippet strf "strftime(format)" i
+strftime('%Y-%m-%d %H:%M:%S')
 endsnippet
