@@ -80,11 +80,11 @@ set pumheight=20
 
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-"set guioptions-=T  "remove toolbar
-"set guioptions-=m  "remove menu
+set guioptions-=T  "remove toolbar
+set guioptions-=m  "remove menu
 
-" list buffers
-nnoremap <leader>l :buffers<CR>:buffer<Space>
+" list buffers 使用ctrlp代替
+"nnoremap <leader>l :buffers<CR>:buffer<Space>
 
 " 自定义文件语法
 au BufReadPost *.part set syntax=html
@@ -102,3 +102,10 @@ map <F9> :source ~\vimfiles\vimrc<CR>
 " 修改分配字符和背景
 set fillchars+=vert:\|
 hi vertsplit guifg=fg guibg=bg
+
+" 进入当前目录
+" http://vimdoc.sourceforge.net/htmldoc/cmdline.html#filename-modifiers
+map <Leader>cd :cd %:p:h<CR>
+map <Leader>o :!start explorer %:p:h<CR>
+map <Leader>ip :!start ipython<CR>
+map <Leader>cm :cd %:p:h<bar>!start cmd<CR>

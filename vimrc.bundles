@@ -29,7 +29,7 @@ call vundle#end()            " required
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
 "nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 "nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
@@ -58,7 +58,7 @@ map <leader>n :NERDTreeToggle D:\WorkStation\Tencent-TP\PaaS<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '^templates_module$']
 let g:NERDTreeDirArrowExpandable="▸"
 let g:NERDTreeDirArrowCollapsible="▾"
-
+let NERDTreeChDirMode=2
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -75,9 +75,11 @@ let g:tagbar_iconchars = ['▶', '▼']
 let g:tagbar_autofocus = 1
 let g:ctrlp_working_path_mode = 'c'
 
+" ctrlp Conf
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
+map <leader>l :CtrlPBuffer<CR>
 "let g:ctrlp_user_command = 'ag -g %s -l --nocolor'
 "
 nnoremap <F3> :GundoToggle<CR>
