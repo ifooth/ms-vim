@@ -32,6 +32,8 @@ endif
 set backupdir=$APPDATA\vim\backup\
 set directory=$APPDATA\vim\swap\
 
+"set shortmess=atI
+
 " 关闭交换文件
 set noswapfile
 
@@ -94,6 +96,10 @@ set laststatus=2
 
 set cursorline
 
+" 折叠
+set foldmethod=indent
+set foldlevel=99
+
 " 修改自动加载
 autocmd! bufwritepost vimrc source %
 autocmd! bufwritepost vimrc.bundles source ~\vimfiles\vimrc
@@ -109,3 +115,13 @@ map <Leader>cd :cd %:p:h<CR>
 map <Leader>o :!start explorer %:p:h<CR>
 map <Leader>ip :!start ipython<CR>
 map <Leader>cm :cd %:p:h<bar>!start cmd<CR>
+
+
+"highlight clear SpellBad
+"highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+"highlight clear SpellCap
+"highlight SpellCap term=underline cterm=underline
+"highlight clear SpellRare
+"highlight SpellRare term=underline cterm=underline
+"highlight clear SpellLocal
+"highlight SpellLocal term=underline cterm=underline

@@ -13,32 +13,34 @@ Plugin 'https://github.com/honza/vim-snippets.git'
 Plugin 'https://github.com/tell-k/vim-autopep8.git'
 
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/dyng/ctrlsf.vim.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 
 Plugin 'https://github.com/sjl/gundo.vim.git'
-Plugin 'https://github.com/majutsushi/tagbar.git'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'https://github.com/bling/vim-airline.git'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
+
+" Color schemes
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 
 call vundle#end()            " required
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 "nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 "nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 let g:syntastic_python_checkers=['flake8'] " 使用pyflakes,速度比pylint快
-let g:syntastic_error_symbol='>>'
-let g:syntastic_warning_symbol='>'
+"let g:syntastic_error_symbol='>>'
+"let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
-let g:syntastic_enable_highlighting=1
+"let g:syntastic_enable_highlighting=1
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_loc_list_height = 5
@@ -82,6 +84,17 @@ map <leader>f :CtrlPMRU<CR>
 map <leader>l :CtrlPBuffer<CR>
 "let g:ctrlp_user_command = 'ag -g %s -l --nocolor'
 "
+
+" ctrlsf Conf
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
 nnoremap <F3> :GundoToggle<CR>
 
 let g:indentLine_enabled = 0
