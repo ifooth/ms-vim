@@ -22,6 +22,7 @@ Plugin 'https://github.com/sjl/gundo.vim.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'https://github.com/bling/vim-airline.git'
+Plugin 'https://github.com/kshenoy/vim-signature.git'
 Plugin 'https://github.com/Yggdroot/indentLine.git'
 
 " Color schemes
@@ -31,9 +32,9 @@ call vundle#end()            " required
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'horizontal-split'
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-"nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-"nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 let g:syntastic_python_checkers=['flake8'] " 使用pyflakes,速度比pylint快
 "let g:syntastic_error_symbol='>>'
@@ -57,7 +58,7 @@ autocmd FileType python map <buffer> <F6> :call Autopep8()<CR>
 
 " NERDTree Conf
 map <leader>n :NERDTreeToggle D:\WorkStation\Tencent-TP\PaaS<CR>
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '^templates_module$']
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '^templates_module$', '^logs$']
 let g:NERDTreeDirArrowExpandable="▸"
 let g:NERDTreeDirArrowCollapsible="▾"
 let NERDTreeChDirMode=2
@@ -75,15 +76,15 @@ let g:airline_symbols.branch = '⎇'
 nmap <F2> :TagbarToggle<CR>
 let g:tagbar_iconchars = ['▶', '▼']
 let g:tagbar_autofocus = 1
-let g:ctrlp_working_path_mode = 'c'
 
 " ctrlp Conf
+let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
 map <leader>l :CtrlPBuffer<CR>
 "let g:ctrlp_user_command = 'ag -g %s -l --nocolor'
-"
+
 
 " ctrlsf Conf
 nmap     <C-F>f <Plug>CtrlSFPrompt

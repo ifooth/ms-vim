@@ -115,13 +115,26 @@ map <Leader>cd :cd %:p:h<CR>
 map <Leader>o :!start explorer %:p:h<CR>
 map <Leader>ip :!start ipython<CR>
 map <Leader>cm :cd %:p:h<bar>!start cmd<CR>
+vnoremap <leader>y "+y
 
+" 设置标记一列的背景颜色和数字一行颜色一致
+"hi! link SignColumn   LineNr
+hi SignColumn guifg=fg guibg=bg
 
-"highlight clear SpellBad
-"highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-"highlight clear SpellCap
-"highlight SpellCap term=underline cterm=underline
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
 "highlight clear SpellRare
 "highlight SpellRare term=underline cterm=underline
 "highlight clear SpellLocal
 "highlight SpellLocal term=underline cterm=underline
+
+vnoremap < <gv
+vnoremap > >gv
+
+function! TrailingWhitespaces()
+    %s/\s*$//
+endfunction
+
+map <leader>tw :call TrailingWhitespaces()<CR>
