@@ -133,8 +133,11 @@ highlight SpellCap term=underline cterm=underline
 vnoremap < <gv
 vnoremap > >gv
 
+" 选中排序
+vnoremap <leader>s :'<,'>sort<CR>
+
 function! TrailingWhitespaces()
     %s/\s*$//
 endfunction
 
-map <leader>tw :call TrailingWhitespaces()<CR>
+map <leader><space> :call TrailingWhitespaces()<CR>
