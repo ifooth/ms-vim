@@ -85,6 +85,12 @@ set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=T  "remove toolbar
 set guioptions-=m  "remove menu
 
+set mouse-=a           " 鼠标暂不启用, 键盘党....
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
 " list buffers 使用ctrlp代替
 "nnoremap <leader>l :buffers<CR>:buffer<Space>
 
@@ -134,10 +140,16 @@ vnoremap < <gv
 vnoremap > >gv
 
 " 选中排序
-vnoremap <leader>s :'<,'>sort<CR>
+"vnoremap <leader>s :'<,'>sort<CR>
 
 function! TrailingWhitespaces()
     %s/\s*$//
 endfunction
 
 map <leader><space> :call TrailingWhitespaces()<CR>
+
+" 删除^M字符
+function! DOS2Unix()
+    %s///g
+endfunction
+
