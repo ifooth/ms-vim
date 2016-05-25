@@ -26,3 +26,17 @@ snippet tr "print trackback" b
 import traceback; traceback.print_exc()
 endsnippet
 
+snippet dpimport "import django paginator" b
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+endsnippet
+
+snippet dp "django paginator" b
+paginator = Paginator(${1:data}, ${2:15})
+_page = request.REQUEST.get('page', '')
+try:
+    page = paginator.page(_page)
+except PageNotAnInteger:
+    page = paginator.page(1)
+except EmptyPage:
+    page = paginator.page(paginator.num_pages)
+endsnippet
