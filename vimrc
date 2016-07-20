@@ -150,6 +150,6 @@ map <leader><space> :call TrailingWhitespaces()<CR>
 
 " 删除^M字符
 function! DOS2Unix()
-    %s///g
+    %s/\r//g
 endfunction
 
