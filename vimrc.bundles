@@ -5,7 +5,9 @@ call vundle#begin('$HOME/vimfiles/bundle/')
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+"Plugin 'https://github.com/davidhalter/jedi-vim.git'
+Plugin 'https://github.com/maralla/completor.vim.git'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 Plugin 'https://github.com/SirVer/ultisnips.git'
 Plugin 'https://github.com/honza/vim-snippets.git'
@@ -13,7 +15,7 @@ Plugin 'https://github.com/honza/vim-snippets.git'
 Plugin 'https://github.com/tell-k/vim-autopep8.git'
 
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/majutsushi/tagbar.git'
+" Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/dyng/ctrlsf.vim.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'https://github.com/tpope/vim-surround.git'
@@ -22,7 +24,10 @@ Plugin 'https://github.com/sjl/gundo.vim.git'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
-Plugin 'https://github.com/bling/vim-airline.git'
+
+Plugin 'https://github.com/vim-airline/vim-airline.git'
+Plugin 'https://github.com/vim-airline/vim-airline-themes'
+
 Plugin 'https://github.com/kshenoy/vim-signature.git'
 
 Plugin 'https://github.com/tpope/vim-fugitive.git'
@@ -55,6 +60,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:airline#extensions#tabline#enabled = 1
+
 "highlight SyntasticErrorSign guifg=white guibg=black
 nnoremap <F5> :SyntasticCheck<CR>
 
@@ -62,21 +69,11 @@ let g:autopep8_max_line_length=119
 autocmd FileType python map <buffer> <F6> :call Autopep8()<CR>
 
 " NERDTree Conf
-map <leader>n :NERDTreeToggle D:\WorkStation\Tencent-TP\PaaS<CR>
+map <leader>n :NERDTreeToggle D:\WorkStation\Tencent<CR>
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '^templates_module$', '^logs$']
 let g:NERDTreeDirArrowExpandable="▸"
 let g:NERDTreeDirArrowCollapsible="▾"
 let NERDTreeChDirMode=2
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '▶'
-let g:airline_left_alt_sep = '❯'
-let g:airline_right_sep = '◀'
-let g:airline_right_alt_sep = '❮'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
 
 nmap <F2> :TagbarToggle<CR>
 let g:tagbar_iconchars = ['▶', '▼']
